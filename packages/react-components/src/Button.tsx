@@ -16,6 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   icon
 }) => {
+  console.log('Button');
   const baseStyles = {
     padding: '8px 16px',
     borderRadius: '4px',
