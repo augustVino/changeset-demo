@@ -1,6 +1,6 @@
 {
   "name": "@vinoorg/test-utils",
-  "version": "0.0.1",
+  "version": "1.0.0-beta.0",
   "description": "通用工具函数库",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

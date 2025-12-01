@@ -7,8 +7,9 @@
     "build": "pnpm -r --filter='./packages/*' run build",
     "test": "pnpm -r --filter='./packages/*' run test",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "pnpm build && changeset publish --access=public"
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish --access=public",
+    "changeset:beta": "changeset pre enter beta"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

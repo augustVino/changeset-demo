@@ -1,6 +1,6 @@
 {
   "name": "@vinoorg/test-react-components",
-  "version": "0.0.1",
+  "version": "1.0.0-beta.0",
   "description": "react 组件库",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

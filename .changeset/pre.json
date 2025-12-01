@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@vinoorg/test-react-components": "0.0.1",
+    "@vinoorg/test-utils": "0.0.1"
+  },
+  "changesets": [
+    "warm-worms-travel"
+  ]
+}
