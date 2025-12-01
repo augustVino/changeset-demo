@@ -27,80 +27,29 @@
 pnpm install
 ```
 
-## 开发
+## **开发工作流**
 
-```bash
-# 构建所有包
-pnpm build
+`修改代码→发布预发布版本，并打tag→使用预发布版本进行测试→测试通过后，修改版本号为正式版→发布正式版`
 
-# 运行测试
-pnpm test
-```
+### 使用 changesets 工作流
 
-## 版本管理
+可手动选择本次需要更新版本的包，同时自动生成 changelog 文件。
 
-### 添加 changeset
+1.进入预发布模式(beta 可修改为需要的 Npm dist tag)
 
-当你完成了某个功能或修复后，使用以下命令创建 changeset：
+`pnpm run changeset:beta`
 
-```bash
-pnpm changeset
-```
+2.在开发分支上修改代码后，生成 changeset 文件
 
-根据提示选择：
-1. 选择要更新的包
-2. 选择版本类型（major/minor/patch）
-3. 输入变更描述
+`pnpm run changeset`
 
-### 应用版本变更
+3.编译打包并修改版本号
+`pnpm run version`
 
-```bash
-pnpm version-packages
-```
+4.review 版本修改后进行代码提交 5.发布版本
 
-这会根据 changeset 文件更新包的版本号和 CHANGELOG。
+`pnpm run publish`
 
-### 发布
+6.发布新的预发布版本时重新执行第 2 步。直到测试完成后，退出预发布模式
 
-```bash
-pnpm release
-```
-
-这会构建所有包并发布到 npm registry。
-
-## 包说明
-
-### @monorepo/react-components
-
-react 组件库，包含常用的 UI 组件。
-
-```typescript
-import { Button } from '@monorepo/react-components';
-
-function App() {
-  return <Button variant="primary">点击我</Button>;
-}
-```
-
-### @monorepo/utils
-
-通用工具函数库，提供常用的工具函数。
-
-```typescript
-import { formatDate, unique, chunk } from '@monorepo/utils';
-
-// 格式化日期
-formatDate(new Date()); // "2024-01-01"
-
-// 数组去重
-unique([1, 2, 2, 3]); // [1, 2, 3]
-
-// 数组分块
-chunk([1, 2, 3, 4, 5], 2); // [[1, 2], [3, 4], [5]]
-```
-
-## 注意事项
-
-- 提交标题限制在 70 个字符以内且必须小写
-- 使用 pnpm 而不是 npm 或 yarn
-- 每次发布前确保所有包都通过了构建和测试
+`pnpm run changeset:exit`
