@@ -16,6 +16,10 @@ importers:
         version: 5.9.3
 
   packages/react-components:
+    dependencies:
+      '@vinoorg/test-utils':
+        specifier: workspace:*
+        version: link:../utils
     devDependencies:
       '@types/react':
         specifier: ^18.2.47

@@ -20,6 +20,9 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "test": "echo \"test not implemented yet\""
   },
+  "dependencies": {
+    "@vinoorg/test-utils": "workspace:*"
+  },
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
