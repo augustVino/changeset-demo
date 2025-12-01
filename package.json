@@ -10,7 +10,7 @@
     "version": "changeset version",
     "release": "pnpm build && changeset publish --access=public",
     "changeset:beta": "changeset pre enter beta",
-    "changeset:exit": "npx changeset pre exit"
+    "changeset:exit": "changeset pre exit"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
